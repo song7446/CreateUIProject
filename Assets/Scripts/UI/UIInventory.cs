@@ -1,18 +1,22 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIInventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Button backButton;
+    RectTransform inventoryRectTransform;
+
+    private void Awake()
     {
-        
+        backButton.onClick.AddListener(OnClickBackButton);
+        inventoryRectTransform = GetComponent<RectTransform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnClickBackButton()
     {
-        
+        inventoryRectTransform.DOAnchorPosX(0, 1f);
     }
 }

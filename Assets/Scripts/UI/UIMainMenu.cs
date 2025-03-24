@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UIMainMenu : MonoBehaviour
 {
     public UIPlayerInfo uiPlayerInfo;
     public Button statusButton;
     public Button inventoryButton;
-    public Button backButton;
-
     private void Awake()
     {
         uiPlayerInfo = GetComponentInChildren<UIPlayerInfo>();
         statusButton.onClick.AddListener(OnStatusButtonClicked);
         inventoryButton.onClick.AddListener(OnInventoryButtonClicked);
-        backButton.onClick.AddListener(OnBackButtonClicked);
-
     }
 
     private void Start()
@@ -27,29 +24,11 @@ public class UIMainMenu : MonoBehaviour
 
     public void OnStatusButtonClicked()
     {
-        GameManager.Instance.UIManager.UIStatus.gameObject.SetActive(true);
-        ButtonsChangeActive();
+        GameManager.Instance.UIManager.UIStatus.GetComponent<RectTransform>().DOAnchorPosX(-600, 1f);
     }
 
     public void OnInventoryButtonClicked()
     {
-        GameManager.Instance.UIManager.UIInventory.gameObject.SetActive(true);
-        ButtonsChangeActive();
-    }
-
-    public void OnBackButtonClicked()
-    {
-        statusButton.gameObject.SetActive(true);
-        inventoryButton.gameObject.SetActive(true);
-        backButton.gameObject.SetActive(false);
-        GameManager.Instance.UIManager.UIInventory.gameObject.SetActive(false);
-        GameManager.Instance.UIManager.UIStatus.gameObject.SetActive(false);
-    }
-
-    public void ButtonsChangeActive()
-    {
-        statusButton.gameObject.SetActive(false);
-        inventoryButton.gameObject.SetActive(false);
-        backButton.gameObject.SetActive(true);
+        GameManager.Instance.UIManager.UIInventory.GetComponent<RectTransform>().DOAnchorPosX(-600, 1f);
     }
 }

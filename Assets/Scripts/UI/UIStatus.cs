@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class UIStatus : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Button backButton;
+    RectTransform statusRectTransform;
+
+    private void Awake()
     {
-        
+        backButton.onClick.AddListener(OnClickBackButton);
+        statusRectTransform = GetComponent<RectTransform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnClickBackButton()
     {
-        
+        statusRectTransform.DOAnchorPosX(0, 1f);
     }
 }

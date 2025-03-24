@@ -7,24 +7,13 @@ using UnityEngine.UI;
 
 public class UIPlayerInfo : MonoBehaviour
 {
-    TextMeshProUGUI playerName;
-    TextMeshProUGUI playerLevel;
-    TextMeshProUGUI playerMaxExp;
-    TextMeshProUGUI playerExp;
-    TextMeshProUGUI playerExplain;
-    Image playerExpBar;
-    TextMeshProUGUI gold;
-
-    private void Awake()
-    {
-        playerName = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        playerLevel = transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
-        playerMaxExp = transform.GetChild(2).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
-        playerExp = transform.GetChild(2).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
-        playerExpBar = transform.GetChild(2).GetChild(1).GetComponent<Image>();
-        playerExplain = transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>();
-        gold = transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-    }
+    [SerializeField] TextMeshProUGUI playerName;
+    [SerializeField] TextMeshProUGUI playerLevel;
+    [SerializeField] TextMeshProUGUI playerMaxExp;
+    [SerializeField] TextMeshProUGUI playerExp;
+    [SerializeField] TextMeshProUGUI playerExplain;
+    [SerializeField] Image playerExpBar;
+    [SerializeField] TextMeshProUGUI gold;
 
     public void UpdatePlayerInfo()
     {
