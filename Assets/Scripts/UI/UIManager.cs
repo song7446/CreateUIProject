@@ -8,10 +8,4 @@ public class UIManager : MonoBehaviour
     public UIStatus UIStatus;
     public UIInventory UIInventory;
 
-    private void Awake()
-    {
-        UIMainMenu = GetComponentInChildren<UIMainMenu>(true);
-        UIStatus = GetComponentInChildren<UIStatus>(true);
-        UIInventory = GetComponentInChildren<UIInventory>(true);
-    }
 }

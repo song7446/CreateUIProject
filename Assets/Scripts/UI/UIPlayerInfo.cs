@@ -26,7 +26,7 @@ public class UIPlayerInfo : MonoBehaviour
         gold = transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 
-    private void Start()
+    public void UpdatePlayerInfo()
     {
         SetName();
         SetLevel();
@@ -34,26 +34,25 @@ public class UIPlayerInfo : MonoBehaviour
         SetExplain();
         SetGold();
     }
-
-    public void SetName()
+    private void SetName()
     {
         playerName.text = GameManager.Instance.Player.playerName.ToString();
     }
-    public void SetLevel()
+    private void SetLevel()
     {
         playerLevel.text = GameManager.Instance.Player.playerLevel.ToString();
     }
-    public void SetExp()
+    private void SetExp()
     {
         playerExpBar.fillAmount = (float)GameManager.Instance.Player.playerExp / (float)GameManager.Instance.Player.playerMaxExp;
         playerExp.text = GameManager.Instance.Player.playerExp.ToString();
         playerMaxExp.text = GameManager.Instance.Player.playerMaxExp.ToString();
     }
-    public void SetExplain()
+    private void SetExplain()
     {
         playerExplain.text = GameManager.Instance.Player.playerExpain.ToString();
     }
-    public void SetGold()
+    private void SetGold()
     {
         string playerGold = GameManager.Instance.Player.playerGold.ToString("C");
         gold.text = playerGold.ToString();
