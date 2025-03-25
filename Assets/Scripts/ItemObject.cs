@@ -10,10 +10,7 @@ public class ItemObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public Item item;
     public Image equipIcon;
     public Image itemIcon;
-    public Button equipButton;
-    public GameObject itemText;
-    public TextMeshProUGUI itemName;
-    public TextMeshProUGUI itemDescription;
+    public Button equipButton; 
 
     private void Awake()
     {
@@ -21,20 +18,22 @@ public class ItemObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
     void EquipItem()
     {
-        equipIcon.gameObject.SetActive(true);
         if (GameManager.Instance.Player.equipItem != null)
             GameManager.Instance.Player.equipItem.equipIcon.gameObject.SetActive(false);
+        equipIcon.gameObject.SetActive(true);
         GameManager.Instance.UIManager.UIStatus.UpdateStatus(item);
         GameManager.Instance.Player.EquipItem(this);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        itemText.SetActive(true);
+        GameManager.Instance.UIManager.UIInventory.itemName.text = item.displayName;
+        GameManager.Instance.UIManager.UIInventory.itemDescription.text = item.description;
+        GameManager.Instance.UIManager.UIInventory.itemText.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        itemText.SetActive(false);
+        GameManager.Instance.UIManager.UIInventory.itemText.SetActive(false);
     }
 }

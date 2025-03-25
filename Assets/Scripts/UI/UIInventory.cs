@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,10 @@ public class UIInventory : MonoBehaviour
     [SerializeField] GameObject slotPrefab;
 
     List<ItemObject> itemSlots;
+
+    public GameObject itemText;
+    public TextMeshProUGUI itemName;
+    public TextMeshProUGUI itemDescription;
 
     private void Awake()
     {
@@ -28,8 +33,6 @@ public class UIInventory : MonoBehaviour
             ItemObject go = Instantiate(slotPrefab, slotParent).GetComponent<ItemObject>();
             go.item = item;
             go.itemIcon.sprite = item.icon;
-            go.itemName.text = item.displayName;
-            go.itemDescription.text = item.description;
             itemSlots.Add(go);
         }
     }
