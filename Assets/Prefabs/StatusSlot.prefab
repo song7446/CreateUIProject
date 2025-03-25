@@ -399,3 +399,7 @@ MonoBehaviour:
   statusIconImage: {fileID: 212450941296439868}
   statusNameText: {fileID: 4996776889033521848}
   statusNumText: {fileID: 2365683438102398334}
+  characterStatus:
+    statusType: 0
+    statusName: 
+    statusNum: 0

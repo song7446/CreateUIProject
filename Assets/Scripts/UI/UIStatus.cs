@@ -11,11 +11,14 @@ public class UIStatus : MonoBehaviour
     [SerializeField] List<Sprite> icons;
     [SerializeField] GameObject slotPrefab;
     RectTransform statusRectTransform;
+    public List<UIStatusSlot> slots;
 
     private void Awake()
     {
         backButton.onClick.AddListener(OnClickBackButton);
         statusRectTransform = GetComponent<RectTransform>();
+
+        slots = new List<UIStatusSlot>();
     }
 
     private void Start()
@@ -28,7 +31,8 @@ public class UIStatus : MonoBehaviour
         foreach (CharacterStatus status in GameManager.Instance.Player.playerStatus)
         {     
             UIStatusSlot slot = Instantiate(slotPrefab, slotsParent).GetComponent<UIStatusSlot>();
-            slot.SetSlotInfo(icons[SelectIcon(status.statusName)], status.statusName, status.statusNum);
+            slot.SetSlotInfo(icons[SelectIcon(status.statusName)], status);
+            slots.Add(slot);
         }
     }
 
@@ -49,5 +53,23 @@ public class UIStatus : MonoBehaviour
                 return 2;
         }
         return -1;
+    }
+
+    public void UpdateStatus(Item item)
+    {
+        foreach (UIStatusSlot slot in slots)
+        {
+            if (GameManager.Instance.Player.equipItem != null)
+            {
+                if (slot.characterStatus.statusType == GameManager.Instance.Player.equipItem.item.plusStatus.statusType)
+                {
+                    slot.statusNumText.text = slot.statusNumText.text.Substring(0, slot.statusNumText.text.IndexOf(' '));
+                }
+            }
+            if (slot.characterStatus.statusType == item.plusStatus.statusType)
+            {
+                slot.statusNumText.text += " + " + item.plusStatus.statusNum.ToString();
+            }        
+        }
     }
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c116b9ba21016c4b853383206c6e28a, type: 3}
   m_Name: GoldKey
   m_EditorClassIdentifier: 
-  displayName: 
-  description: 
-  icon: {fileID: 0}
+  displayName: "\uD669\uAE08 \uC5F4\uC1E0"
+  description: "\uBCF4\uBB3C \uC0C1\uC790\uB97C \uC5F4 \uC218 \uC788\uC2B5\uB2C8\uB2E4"
+  icon: {fileID: 4143605862378377139, guid: 76a0ae3b6739b9d49b8afe591137c19d, type: 3}

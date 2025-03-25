@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c116b9ba21016c4b853383206c6e28a, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
-  displayName: 
-  description: 
-  icon: {fileID: 0}
+  displayName: "\uB9DD\uCE58"
+  description: "\uAC74\uCD95\uC744 \uD560 \uB54C \uC0AC\uC6A9\uD569\uB2C8\uB2E4"
+  icon: {fileID: 5393448996881579246, guid: c83fa2ac472c64145a29bad9c05a9a50, type: 3}

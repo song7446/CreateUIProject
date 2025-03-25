@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemObject : MonoBehaviour
 {
     public Item item;
+    public Image equipIcon;
+    public Button equipButton;
 
-    public string GetName()
+    private void Awake()
     {
-        return item.displayName;
+        equipButton = GetComponent<Button>();
+        equipButton.onClick.AddListener(EquipItem);
+        equipIcon = transform.GetChild(1).GetComponent<Image>();
     }
 
-    public string GetDescription()
+    void EquipItem()
     {
-        return item.description;
+        equipIcon.gameObject.SetActive(true);
+        if (GameManager.Instance.Player.equipItem != null)
+            GameManager.Instance.Player.equipItem.equipIcon.gameObject.SetActive(false);
+        GameManager.Instance.UIManager.UIStatus.UpdateStatus(item);
+        GameManager.Instance.Player.SetPlayerStatus(this);
     }
 }

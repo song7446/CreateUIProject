@@ -805,6 +805,8 @@ GameObject:
   m_Component:
   - component: {fileID: 399644086}
   - component: {fileID: 399644087}
+  - component: {fileID: 399644089}
+  - component: {fileID: 399644088}
   m_Layer: 5
   m_Name: InventorySlots
   m_TagString: Untagged
@@ -828,8 +830,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -375, y: 82}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -198.52637, y: -66.36255}
+  m_SizeDelta: {x: 452.947, y: 415.4656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &399644087
 MonoBehaviour:
@@ -850,11 +852,49 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
-  m_StartAxis: 1
+  m_StartAxis: 0
   m_CellSize: {x: 140, y: 140}
   m_Spacing: {x: 15, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &399644088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399644085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &399644089
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399644085}
+  m_CullTransparentMesh: 1
 --- !u!1 &405891446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,9 +2326,9 @@ MonoBehaviour:
   backButton: {fileID: 614796889}
   slotsParent: {fileID: 1431726976}
   icons:
-  - {fileID: 712035800519618848, guid: 5555116c8467a454c8c90c5cece8dc84, type: 3}
-  - {fileID: -6717884257390833292, guid: 6f2409c812e59e04fb9d2af0715bea80, type: 3}
-  - {fileID: 4606908045521496030, guid: 2b8558b645a07d74582677fd0bf9dfa9, type: 3}
+  - {fileID: -5811053262657667208, guid: d08d31b3bb621974fa68cd19820122b5, type: 3}
+  - {fileID: 8337193673626998038, guid: 247317e5e362b92489f2c513aa2657d2, type: 3}
+  - {fileID: -8024233173460589827, guid: 6f5abd65dca112a48b0810ccf5f57edd, type: 3}
   slotPrefab: {fileID: 5410192072702870885, guid: 9c14ac20bb9cc9e4a8e7c60acdcd38e5,
     type: 3}
 --- !u!1 &1179130600
@@ -2451,6 +2491,8 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: 1f134e95a8ea10a4f952376a6b377355, type: 2}
   - {fileID: 11400000, guid: af40d25d021300747accf523a8d8cde4, type: 2}
+  - {fileID: 11400000, guid: c44d64bcfa337634e94a5d3e2be7e770, type: 2}
+  - {fileID: 11400000, guid: b98c7a928ec8d814a80c364559e3890d, type: 2}
 --- !u!1 &1389544793
 GameObject:
   m_ObjectHideFlags: 0

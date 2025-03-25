@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class UIStatusSlot : MonoBehaviour
 {
     [SerializeField] Image statusIconImage;
-    [SerializeField] TextMeshProUGUI statusNameText;
-    [SerializeField] TextMeshProUGUI statusNumText;
+    public TextMeshProUGUI statusNameText;
+    public TextMeshProUGUI statusNumText;
+    public CharacterStatus characterStatus;
 
-
-    public void SetSlotInfo(Sprite sprite, string name, int num)
+    public void SetSlotInfo(Sprite sprite, CharacterStatus characterStatus)
     {
+        this.characterStatus = characterStatus;
         statusIconImage.sprite = sprite;
-        statusNameText.text = name;
-        statusNumText.text = num.ToString();
+        statusNameText.text = characterStatus.statusName;
+        statusNumText.text = characterStatus.statusNum.ToString();
     }
 }

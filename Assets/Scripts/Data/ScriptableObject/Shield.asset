@@ -15,3 +15,6 @@ MonoBehaviour:
   displayName: "\uBC29\uD328"
   description: "\uC801\uC758 \uACF5\uACA9\uC744 \uBC29\uC5B4\uD569\uB2C8\uB2E4"
   icon: {fileID: -6717884257390833292, guid: 6f2409c812e59e04fb9d2af0715bea80, type: 3}
+  plusStatus:
+    statusName: "\uBC29\uC5B4\uB825"
+    statusNum: 10

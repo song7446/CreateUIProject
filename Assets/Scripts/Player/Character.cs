@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -9,16 +10,23 @@ public class Character : MonoBehaviour
     public int playerMaxExp { get; private set; }
     public int playerExp { get; private set; }
     public int playerGold { get; private set; }
-    public string playerExpain{ get; private set; }
+    public string playerExpain { get; private set; }
 
-    public List<CharacterStatus> playerStatus { get; private set; }
+    public List<CharacterStatus> playerStatus;
     public CharacterStatus attackStatus { get; private set; }
     public CharacterStatus defenseStatus { get; private set; }
     public CharacterStatus healthStatus { get; private set; }
 
     public List<Item> items;
 
+    public ItemObject equipItem;
+
     private void Awake()
+    {
+        SetPlayerData();
+    }
+
+    void SetPlayerData()
     {
         playerName = "송원석";
         playerLevel = 18;
@@ -32,16 +40,24 @@ public class Character : MonoBehaviour
         attackStatus = new CharacterStatus();
         attackStatus.statusName = "공격력";
         attackStatus.statusNum = 35;
+        attackStatus.statusType = StatusType.Attack;
         playerStatus.Add(attackStatus);
 
         defenseStatus = new CharacterStatus();
         defenseStatus.statusName = "방어력";
         defenseStatus.statusNum = 40;
+        defenseStatus.statusType = StatusType.Defense;
         playerStatus.Add(defenseStatus);
 
         healthStatus = new CharacterStatus();
         healthStatus.statusName = "체력";
         healthStatus.statusNum = 100;
+        healthStatus.statusType = StatusType.Health;
         playerStatus.Add(healthStatus);
+    }
+
+    public void SetPlayerStatus(ItemObject item)
+    {
+        equipItem = item;
     }
 }

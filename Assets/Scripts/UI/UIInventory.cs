@@ -12,10 +12,13 @@ public class UIInventory : MonoBehaviour
     [SerializeField] Transform slotParent;
     [SerializeField] GameObject slotPrefab;
 
+    List<ItemObject> itemSlots;
+
     private void Awake()
     {
         backButton.onClick.AddListener(OnClickBackButton);
         inventoryRectTransform = GetComponent<RectTransform>();
+        itemSlots = new List<ItemObject>();
     }
 
     private void Start()
@@ -25,6 +28,7 @@ public class UIInventory : MonoBehaviour
             ItemObject go = Instantiate(slotPrefab, slotParent).AddComponent<ItemObject>();
             go.item = item;
             go.transform.GetChild(0).GetComponent<Image>().sprite = item.icon;
+            itemSlots.Add(go);
         }
     }
 
