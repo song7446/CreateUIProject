@@ -22,6 +22,6 @@ public class ItemObject : MonoBehaviour
         if (GameManager.Instance.Player.equipItem != null)
             GameManager.Instance.Player.equipItem.equipIcon.gameObject.SetActive(false);
         GameManager.Instance.UIManager.UIStatus.UpdateStatus(item);
-        GameManager.Instance.Player.SetPlayerStatus(this);
+        GameManager.Instance.Player.EquipItem(this);
     }
 }

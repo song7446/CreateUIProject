@@ -10,6 +10,7 @@ public class UIMainMenu : MonoBehaviour
     public UIPlayerInfo uiPlayerInfo;
     public Button statusButton;
     public Button inventoryButton;
+
     private void Awake()
     {
         uiPlayerInfo = GetComponentInChildren<UIPlayerInfo>();

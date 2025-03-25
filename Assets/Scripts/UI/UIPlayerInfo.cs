@@ -25,25 +25,25 @@ public class UIPlayerInfo : MonoBehaviour
     }
     private void SetName()
     {
-        playerName.text = GameManager.Instance.Player.playerName.ToString();
+        playerName.text = GameManager.Instance.Player.characterInfo.CharacterName.ToString();
     }
     private void SetLevel()
     {
-        playerLevel.text = GameManager.Instance.Player.playerLevel.ToString();
+        playerLevel.text = GameManager.Instance.Player.characterInfo.CharacterLevel.ToString();
     }
     private void SetExp()
     {
-        playerExpBar.fillAmount = (float)GameManager.Instance.Player.playerExp / (float)GameManager.Instance.Player.playerMaxExp;
-        playerExp.text = GameManager.Instance.Player.playerExp.ToString();
-        playerMaxExp.text = GameManager.Instance.Player.playerMaxExp.ToString();
+        playerExpBar.fillAmount = (float)GameManager.Instance.Player.characterInfo.CharacterExp / (float)GameManager.Instance.Player.characterInfo.CharacterMaxExp;
+        playerExp.text = GameManager.Instance.Player.characterInfo.CharacterExp.ToString();
+        playerMaxExp.text = GameManager.Instance.Player.characterInfo.CharacterMaxExp.ToString();
     }
     private void SetExplain()
     {
-        playerExplain.text = GameManager.Instance.Player.playerExpain.ToString();
+        playerExplain.text = GameManager.Instance.Player.characterInfo.CharacterExpain.ToString();
     }
     private void SetGold()
     {
-        string playerGold = GameManager.Instance.Player.playerGold.ToString("C");
+        string playerGold = GameManager.Instance.Player.characterInfo.CharacterGold.ToString("C");
         gold.text = playerGold.ToString();
     }
 }
