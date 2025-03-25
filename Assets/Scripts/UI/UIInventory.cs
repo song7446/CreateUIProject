@@ -25,9 +25,11 @@ public class UIInventory : MonoBehaviour
     {
         foreach(Item item in GameManager.Instance.Player.items)
         {
-            ItemObject go = Instantiate(slotPrefab, slotParent).AddComponent<ItemObject>();
+            ItemObject go = Instantiate(slotPrefab, slotParent).GetComponent<ItemObject>();
             go.item = item;
-            go.transform.GetChild(0).GetComponent<Image>().sprite = item.icon;
+            go.itemIcon.sprite = item.icon;
+            go.itemName.text = item.displayName;
+            go.itemDescription.text = item.description;
             itemSlots.Add(go);
         }
     }

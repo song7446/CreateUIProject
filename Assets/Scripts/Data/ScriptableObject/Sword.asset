@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   displayName: "\uAC80"
-  description: "\uC801\uC744 \uBB34\uCC0C\uB974\uB294\uB370 \uC0AC\uC6A9\uD569\uB2C8\uB2E4"
+  description: "\uACF5\uACA9\uB825\uC744 \uC99D\uAC00\uC2DC\uCF1C\uC90D\uB2C8\uB2E4"
   icon: {fileID: 712035800519618848, guid: 5555116c8467a454c8c90c5cece8dc84, type: 3}
   plusStatus:
     statusType: 1

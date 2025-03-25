@@ -29,9 +29,9 @@ public class UIStatus : MonoBehaviour
     void CreateSlots()
     {
         foreach (CharacterStatus status in GameManager.Instance.Player.playerStatus)
-        {     
+        {
             UIStatusSlot slot = Instantiate(slotPrefab, slotsParent).GetComponent<UIStatusSlot>();
-            slot.SetSlotInfo(icons[SelectIcon(status.statusName)], status);
+            SetSlotInfo(slot, icons[SelectIcon(status.statusType)], status);
             slots.Add(slot);
         }
     }
@@ -41,18 +41,26 @@ public class UIStatus : MonoBehaviour
         statusRectTransform.DOAnchorPosX(0, 1f);
     }
 
-    int SelectIcon(string name)
+    int SelectIcon(StatusType statusType)
     {
-        switch (name)
+        switch (statusType)
         {
-            case "공격력":
+            case StatusType.Attack:
                 return 0;
-            case "방어력":
+            case StatusType.Defense:
                 return 1;
-            case "체력":
+            case StatusType.Health:
                 return 2;
         }
         return -1;
+    }
+
+    public void SetSlotInfo(UIStatusSlot slot, Sprite sprite, CharacterStatus characterStatus)
+    {
+        slot.characterStatus = characterStatus;
+        slot.statusIconImage.sprite = sprite;
+        slot.statusNameText.text = characterStatus.statusName;
+        slot.statusNumText.text = characterStatus.statusNum.ToString();
     }
 
     public void UpdateStatus(Item item)
@@ -69,7 +77,7 @@ public class UIStatus : MonoBehaviour
             if (slot.characterStatus.statusType == item.plusStatus.statusType)
             {
                 slot.statusNumText.text += " + " + item.plusStatus.statusNum.ToString();
-            }        
+            }
         }
     }
 }

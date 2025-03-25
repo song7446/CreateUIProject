@@ -7,5 +7,4 @@ public class UIManager : MonoBehaviour
     public UIMainMenu UIMainMenu;
     public UIStatus UIStatus;
     public UIInventory UIInventory;
-
 }
