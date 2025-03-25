@@ -16,6 +16,8 @@ public class Character : MonoBehaviour
     public CharacterStatus defenseStatus { get; private set; }
     public CharacterStatus healthStatus { get; private set; }
 
+    public List<Item> items;
+
     private void Awake()
     {
         playerName = "¼Û¿ø¼®";
