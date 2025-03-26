@@ -8,22 +8,22 @@ using DG.Tweening;
 public class UIStatus : MonoBehaviour
 {
     // 돌아가기 버튼
-    [SerializeField] Button backButton;
+    [SerializeField] private Button backButton;
 
     // 스탯 부모 트랜스폼
-    [SerializeField] Transform slotsParent;
+    [SerializeField] private Transform slotsParent;
 
     // 스탯 아이콘 리스트
-    [SerializeField] List<Sprite> icons;
+    [SerializeField] private List<Sprite> icons;
 
     // 스탯 프리팹
-    [SerializeField] GameObject slotPrefab;
+    [SerializeField] private GameObject slotPrefab;
 
     // 스탯 트랜스폼
-    RectTransform statusRectTransform;
+    private RectTransform statusRectTransform;
 
     // 스탯 리스트
-    public List<UIStatusSlot> slots;
+    private List<UIStatusSlot> slots;
 
     private void Awake()
     {
@@ -44,7 +44,7 @@ public class UIStatus : MonoBehaviour
     }
 
     // 스탯 슬롯들 만들기 함수 
-    void CreateSlots()
+    private void CreateSlots()
     {
         // 플레이어 스탯 정보 순회
         foreach (CharacterStatus status in GameManager.Instance.Player.playerStatus)
@@ -61,14 +61,14 @@ public class UIStatus : MonoBehaviour
     }
 
     // 돌아가기 버튼 함수 
-    void OnClickBackButton()
+    private void OnClickBackButton()
     {
         // 스탯 UI 화면 안에서 밖으로 슬라이딩
         statusRectTransform.DOAnchorPosX(0, 1f);
     }
 
     // 스탯 아이콘 설정 
-    int SelectIcon(StatusType statusType)
+    private int SelectIcon(StatusType statusType)
     {
         switch (statusType)
         {
@@ -83,7 +83,7 @@ public class UIStatus : MonoBehaviour
     }
 
     // 슬롯 데이터 설정 
-    public void SetSlotInfo(UIStatusSlot slot, Sprite sprite, CharacterStatus characterStatus)
+    private void SetSlotInfo(UIStatusSlot slot, Sprite sprite, CharacterStatus characterStatus)
     {
         // 플레이어 스텟 설정
         slot.characterStatus = characterStatus;

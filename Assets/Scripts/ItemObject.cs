@@ -15,7 +15,7 @@ public class ItemObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     // 아이템 이미지 
     public Image itemIcon;
     // 장착 버튼
-    public Button equipButton; 
+    [SerializeField] private Button equipButton; 
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class ItemObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
 
     // 아이템 장착 
-    void EquipItem()
+    private void EquipItem()
     {
         // 플레이어가 장착하고 있던 아이템이 있다면(장착하고 있던 아이템이 없을 수도 있기 때문에 null 방지)
         if (GameManager.Instance.Player.equipItem != null)

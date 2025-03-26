@@ -8,19 +8,19 @@ using UnityEngine.UI;
 public class UIPlayerInfo : MonoBehaviour
 {
     // 플레이어 이름
-    [SerializeField] TextMeshProUGUI playerName;
+    [SerializeField] private TextMeshProUGUI playerName;
     // 플레이어 레벨
-    [SerializeField] TextMeshProUGUI playerLevel;
+    [SerializeField] private TextMeshProUGUI playerLevel;
     // 플레이어 최대 경험치
-    [SerializeField] TextMeshProUGUI playerMaxExp;
+    [SerializeField] private TextMeshProUGUI playerMaxExp;
     // 플레이어 현재 경험치
-    [SerializeField] TextMeshProUGUI playerExp;
+    [SerializeField] private TextMeshProUGUI playerExp;
     // 플레이어 설명
-    [SerializeField] TextMeshProUGUI playerExplain;
+    [SerializeField] private TextMeshProUGUI playerExplain;
     // 플레이어 경험치 바
-    [SerializeField] Image playerExpBar;
+    [SerializeField] private Image playerExpBar;
     // 플레이어 골드
-    [SerializeField] TextMeshProUGUI gold;
+    [SerializeField] private TextMeshProUGUI gold;
 
     private void Start()
     {
@@ -28,7 +28,7 @@ public class UIPlayerInfo : MonoBehaviour
         UpdatePlayerInfo();
     }
 
-    public void UpdatePlayerInfo()
+    private void UpdatePlayerInfo()
     {
         // 이름 설정
         SetName();

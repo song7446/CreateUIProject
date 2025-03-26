@@ -8,11 +8,11 @@ using DG.Tweening;
 public class UIMainMenu : MonoBehaviour
 {
     // 플레이어 정보 UI
-    public UIPlayerInfo uiPlayerInfo;
+    private UIPlayerInfo uiPlayerInfo;
     // 스탯 UI 불러오는 버튼
-    public Button statusButton;
+    [SerializeField] private Button statusButton;
     // 인벤토리 UI 불러오는 버튼
-    public Button inventoryButton;
+    [SerializeField] private Button inventoryButton;
 
     private void Awake()
     {
@@ -25,14 +25,14 @@ public class UIMainMenu : MonoBehaviour
     }
 
     // 스텟 UI 불러오는 함수 
-    public void OnStatusButtonClicked()
+    private void OnStatusButtonClicked()
     {
         // 스텟 UI 화면 밖에서 안으로 슬라이딩
         GameManager.Instance.UIManager.UIStatus.GetComponent<RectTransform>().DOAnchorPosX(-600, 1f);
     }
 
     // 인벤토리 UI 불러오는 함수
-    public void OnInventoryButtonClicked()
+    private void OnInventoryButtonClicked()
     {
         // 인벤토리 UI 화면 밖에서 안으로 슬라이딩
         GameManager.Instance.UIManager.UIInventory.GetComponent<RectTransform>().DOAnchorPosX(-600, 1f);

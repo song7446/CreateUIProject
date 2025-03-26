@@ -1264,7 +1264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fea6d35bcd3694199904d280aa017b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPlayerInfo: {fileID: 0}
   statusButton: {fileID: 1885896416}
   inventoryButton: {fileID: 446564376}
 --- !u!1 &410087039
@@ -2686,7 +2685,6 @@ MonoBehaviour:
   - {fileID: -8024233173460589827, guid: 6f5abd65dca112a48b0810ccf5f57edd, type: 3}
   slotPrefab: {fileID: 5410192072702870885, guid: 9c14ac20bb9cc9e4a8e7c60acdcd38e5,
     type: 3}
-  slots: []
 --- !u!1 &1093818633
 GameObject:
   m_ObjectHideFlags: 0
