@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 캐릭터 정보
 public class CharacterInfo
 {
     public string CharacterName;

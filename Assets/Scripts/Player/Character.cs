@@ -5,19 +5,24 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    // 캐릭터 정보
     public CharacterInfo characterInfo;
 
+    // 스탯 리스트 
     public List<CharacterStatus> playerStatus;
     public CharacterStatus attackStatus { get; private set; }
     public CharacterStatus defenseStatus { get; private set; }
     public CharacterStatus healthStatus { get; private set; }
 
+    // 소유 아이템
     public List<Item> items;
 
+    // 장착 아이템 
     public ItemObject equipItem;
 
     private void Awake()
     {
+        // 데이터 초기화 및 세팅
         characterInfo = new CharacterInfo();
 
         playerStatus = new List<CharacterStatus>();
